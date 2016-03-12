@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - hibernate@localhost" uuid="223c30ab-d962-4652-852d-f56200af5e50">
+    <database-info product="MySQL" version="5.7.9-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="hibernate"/>
+      <table id="2" parent="1" name="department"/>
+      <table id="3" parent="1" name="employee"/>
+      <column id="4" parent="2" name="D_ID">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="5" parent="2" name="DEPT_NAME">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="6" parent="2" name="PRIMARY">
+        <columns>D_ID</columns>
+        <primary>1</primary>
+      </key>
+      <column id="7" parent="3" name="E_ID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="8" parent="3" name="NAME">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="9" parent="3" name="SALARY">
+        <data-type>double</data-type>
+      </column>
+      <column id="10" parent="3" name="EMAIL">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="11" parent="3" name="DEPT_ID">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="12" parent="3" name="FK_ciihnikv3kjuywon8syi1fu78">
+        <columns>DEPT_ID</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="13" parent="3" name="PRIMARY">
+        <columns>E_ID</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="14" parent="3" name="FK_ciihnikv3kjuywon8syi1fu78">
+        <columns>DEPT_ID</columns>
+        <ref-key>~.department.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+    </database-model>
+  </data-source>
+</component>
