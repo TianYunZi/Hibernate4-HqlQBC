@@ -21,4 +21,7 @@
             <column name="DEPT_ID"/>
         </many-to-one>
     </class>
+
+    <query name="emplyeeEmps"><![CDATA[FROM Employee e where e.salary > :minSal and e.salary < :maxSal]]></query>
+
 </hibernate-mapping>

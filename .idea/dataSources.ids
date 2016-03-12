@@ -12,7 +12,7 @@
       <table id="3" parent="1" name="employee"/>
       <column id="4" parent="2" name="D_ID">
         <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
+        <data-type>int(11)</data-type>
       </column>
       <column id="5" parent="2" name="DEPT_NAME">
         <data-type>varchar(255)</data-type>
@@ -35,7 +35,7 @@
         <data-type>varchar(255)</data-type>
       </column>
       <column id="11" parent="3" name="DEPT_ID">
-        <data-type>varchar(255)</data-type>
+        <data-type>int(11)</data-type>
       </column>
       <index id="12" parent="3" name="FK_ciihnikv3kjuywon8syi1fu78">
         <columns>DEPT_ID</columns>

@@ -11,6 +11,14 @@ public class Employee {
 
 	private Department department;
 
+	public Employee() {
+	}
+
+	public Employee(double salary, String email) {
+		this.salary = salary;
+		this.email = email;
+	}
+
 	public Integer getId() {
 		return id;
 	}
