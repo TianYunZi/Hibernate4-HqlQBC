@@ -37,8 +37,26 @@
         <!-- 设定对数据库进行批量删除，批量更新和批量插入的时候的批次大小，对MySQL无效-->
         <property name="hibernate.jdbc.batch_size">30</property>
 
+        <!--启用二级缓存-->
+        <property name="cache.use_second_level_cache">true</property>
+
+        <!--配置启用查询缓存-->
+        <property name="cache.use_query_cache">true</property>
+
+        <!--配置使用二级缓存的产品-->
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+
+        <!--配置管理session的方式-->
+        <property name="current_session_context_class">thread</property>
+
         <mapping resource="org.ahhn.com.entity/Department.hbm.xml"/>
         <mapping resource="org.ahhn.com.entity/Employee.hbm.xml"/>
+        
+        <class-cache class="org.ahhn.com.entity.Employee" usage="read-write"/>
+
+        <class-cache class="org.ahhn.com.entity.Department" usage="read-write"/>
+        <!--设置集合属性二级缓存-->
+        <collection-cache collection="org.ahhn.com.entity.Department.employees" usage="read-write"/>
 
     </session-factory>
 </hibernate-configuration>
